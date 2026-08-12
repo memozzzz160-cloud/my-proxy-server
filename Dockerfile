@@ -1,6 +1,6 @@
-FROM teddysun/xray
-ENV UUID=c9bf9e57-1685-4c89-bafb-ff5af830be1a
-ENV PATH=/ws-tunnel-v2
+FROM alpine:latest
+RUN apk add --no-cache curl unzip bash
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh"]
